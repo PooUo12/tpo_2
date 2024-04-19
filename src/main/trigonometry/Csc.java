@@ -1,4 +1,4 @@
-package main.trigonometry;
+package trigonometry;
 
 public class Csc {
     private final Sin sin;

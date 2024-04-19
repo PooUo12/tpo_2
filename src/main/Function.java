@@ -1,10 +1,8 @@
-package main;
-
-import main.log.Log;
-import main.trigonometry.Cos;
-import main.trigonometry.Cot;
-import main.trigonometry.Csc;
-import main.trigonometry.Tan;
+import log.Log;
+import trigonometry.Cos;
+import trigonometry.Cot;
+import trigonometry.Csc;
+import trigonometry.Tan;
 
 public class Function {
 

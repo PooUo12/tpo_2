@@ -1,4 +1,4 @@
-package main.log;
+package log;
 
 public class Log {
     private final Ln ln;

@@ -1,4 +1,4 @@
-package main.log;
+package log;
 
 public class Ln {
     public double solveLn(Double value, Double eps){

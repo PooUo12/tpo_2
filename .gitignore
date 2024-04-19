@@ -1,7 +1,13 @@
 ### IntelliJ IDEA ###
+.idea
+.gradle
+gradle
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
+gradlew.bat
+gradlew
 
 ### Eclipse ###
 .apt_generated

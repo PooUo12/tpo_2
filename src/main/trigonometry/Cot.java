@@ -1,4 +1,4 @@
-package main.trigonometry;
+package trigonometry;
 
 public class Cot {
     private final Sin sin;

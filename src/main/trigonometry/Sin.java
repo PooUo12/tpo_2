@@ -1,4 +1,4 @@
-package main.trigonometry;
+package trigonometry;
 
 import main.util.Factorial;
 
