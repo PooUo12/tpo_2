@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a04b7ac0-faaf-463c-99ad-5501396b9b19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Function.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/log/Ln.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/log/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/trigonometry/Cos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/trigonometry/Cot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/trigonometry/Csc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/trigonometry/Sin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/trigonometry/Tan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/util/Factorial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tpo_2.iml" afterDir="false" />
-    </list>
+    <list default="true" id="a04b7ac0-faaf-463c-99ad-5501396b9b19" name="Changes" comment="functions_done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +44,12 @@
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "/Users/poouo/tpo_2/src/Main.java"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="JUnit.test.LnTest">
@@ -121,7 +108,20 @@
       <option name="presentableId" value="Default" />
       <updated>1713534667204</updated>
     </task>
+    <task id="LOCAL-00001" summary="functions_done">
+      <option name="closed" value="true" />
+      <created>1713541470510</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713541470510</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="functions_done" />
+    <option name="LAST_COMMIT_MESSAGE" value="functions_done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
