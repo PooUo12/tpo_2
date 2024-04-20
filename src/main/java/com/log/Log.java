@@ -1,4 +1,4 @@
-package log;
+package com.log;
 
 public class Log {
     private final Ln ln;
@@ -7,7 +7,7 @@ public class Log {
         this.ln = ln;
     }
 
-    public Double SolveLog(double base, double value, double eps){
+    public Double solveLog(double base, double value, double eps){
         if (base == 1){
             return Double.NaN;
         }

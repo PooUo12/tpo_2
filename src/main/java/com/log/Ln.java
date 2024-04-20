@@ -1,6 +1,6 @@
-package log;
+package com.log;
 
-public class Ln {
+public class Ln{
     public double solveLn(Double value, Double eps){
         double x = (value - 1)/ (value + 1);
         double term = x;

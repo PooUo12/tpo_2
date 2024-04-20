@@ -1,4 +1,4 @@
-package trigonometry;
+package com.trigonometry;
 
 public class Cos {
 
@@ -8,7 +8,7 @@ public class Cos {
     }
 
     public double solveCos(double value, double eps){
-        return sin.solveSin(value + Math.PI/2, eps);
+        return sin.solveFunction(value + Math.PI/2, eps);
     }
 
 

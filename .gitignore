@@ -4,10 +4,10 @@
 gradle
 out/
 !**/src/main/**/out/
-!**/src/test/**/out/
+!**/src/VariantFunctionTest/**/out/
 
-gradlew.bat
-gradlew
+prison/gradlew.bat
+prison/gradlew
 
 ### Eclipse ###
 .apt_generated
@@ -19,7 +19,7 @@ gradlew
 .sts4-cache
 bin/
 !**/src/main/**/bin/
-!**/src/test/**/bin/
+!**/src/VariantFunctionTest/**/bin/
 
 ### NetBeans ###
 /nbproject/private/

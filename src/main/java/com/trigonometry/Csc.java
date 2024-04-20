@@ -1,4 +1,4 @@
-package trigonometry;
+package com.trigonometry;
 
 public class Csc {
     private final Sin sin;
@@ -13,6 +13,6 @@ public class Csc {
             return Double.NaN;
         }
 
-        return 1.0/sin.solveSin(value, eps);
+        return 1.0/sin.solveFunction(value, eps);
     }
 }

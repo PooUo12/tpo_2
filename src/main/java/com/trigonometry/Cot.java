@@ -1,4 +1,4 @@
-package trigonometry;
+package com.trigonometry;
 
 public class Cot {
     private final Sin sin;
@@ -14,6 +14,6 @@ public class Cot {
         if (check == 0){
             return Double.NaN;
         }
-        return cos.solveCos(value, eps)/sin.solveSin(value, eps);
+        return cos.solveCos(value, eps)/sin.solveFunction(value, eps);
     }
 }

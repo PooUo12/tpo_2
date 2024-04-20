@@ -1,4 +1,4 @@
-package main.util;
+package com.util;
 
 public class Factorial {
     public int getFactorial(int value){

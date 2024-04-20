@@ -1,4 +1,4 @@
-package trigonometry;
+package com.trigonometry;
 
 public class Tan {
 
@@ -15,6 +15,6 @@ public class Tan {
         if (check == 0.5){
             return Double.NaN;
         }
-        return sin.solveSin(value, eps)/(cos.solveCos(value, eps));
+        return sin.solveFunction(value, eps)/(cos.solveCos(value, eps));
     }
 }
