@@ -18,6 +18,14 @@ public class Sin implements IFunction {
             }
             k += 2;
             sol += term;
+            if (k == 31){
+                break;
+            }
+            if (sol > 5000){
+                sol = Double.POSITIVE_INFINITY;
+            } else if(sol < -5000){
+                sol = Double.NEGATIVE_INFINITY;
+            }
         }
         return sol;
     }

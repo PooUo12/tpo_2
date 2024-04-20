@@ -9,7 +9,7 @@ public class Log {
 
     public Double solveLog(double base, double value, double eps){
         if (base == 1){
-            return Double.NaN;
+            return Double.POSITIVE_INFINITY;
         }
         return (ln.solveLn(value, eps))/(ln.solveLn(base, eps));
     }

@@ -1,6 +1,8 @@
 package com.trigonometry;
 
-public class Tan {
+import com.common.IFunction;
+
+public class Tan implements IFunction {
 
     private final Sin sin;
     private final Cos cos;
@@ -9,12 +11,13 @@ public class Tan {
         this.cos = cos;
     }
 
-    public Double solveTan(double value, double eps){
+    @Override
+    public Double solveFunction(double value, double eps){
         double check = (value / Math.PI);
         check = check - Math.floor(check);
         if (check == 0.5){
-            return Double.NaN;
+            return Double.POSITIVE_INFINITY;
         }
-        return sin.solveFunction(value, eps)/(cos.solveCos(value, eps));
+        return sin.solveFunction(value, eps)/(cos.solveFunction(value, eps));
     }
 }

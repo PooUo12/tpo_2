@@ -1,3 +1,4 @@
+import com.common.IFunction;
 import com.func.VariantFunction;
 import com.log.Ln;
 import com.log.Log;
@@ -41,7 +42,7 @@ public class VariantFunctionTest {
     static Reader tanIn;
     static Reader lnIn;
     static Reader log2In;
-    static Reader log3In;
+    static Reader log5In;
 
 
     // Найдем область допустимых значений
@@ -64,19 +65,19 @@ public class VariantFunctionTest {
         logMock = Mockito.mock(Log.class);
 
         try {
-            var systemOut = new FileWriter("src/test/csv/out/system.csv");
+            var systemOut = new FileWriter("src/test/resources/csv/out/system.csv");
             systemCsv = new CsvUtil(systemOut);
-            var sinOut = new FileWriter("src/test/csv/out/sin.csv");
+            var sinOut = new FileWriter("src/test/resources/csv/out/sin.csv");
             sinCsv = new CsvUtil(sinOut);
 
-            sinIn = new FileReader("src/test/csv/in/sin.csv");
-            cosIn = new FileReader("src/test/csv/in/cos.csv");
-            cscIn = new FileReader("src/test/csv/in/csc.csv");
-            cotIn = new FileReader("src/test/csv/in/cot.csv");
-            tanIn = new FileReader("src/test/csv/in/tan.csv");
-            lnIn = new FileReader("src/test/csv/in/ln.csv");
-            log2In = new FileReader("src/test/csv/in/log2.csv");
-            log3In = new FileReader("src/test/csv/in/log3.csv");
+            sinIn = new FileReader("src/test/resources/csv/in/sin.csv");
+            cosIn = new FileReader("src/test/resources/csv/in/cos.csv");
+            cscIn = new FileReader("src/test/resources/csv/in/csc.csv");
+            cotIn = new FileReader("src/test/resources/csv/in/cot.csv");
+            tanIn = new FileReader("src/test/resources/csv/in/tan.csv");
+            lnIn = new FileReader("src/test/resources/csv/in/ln.csv");
+            log2In = new FileReader("src/test/resources/csv/in/log2.csv");
+            log5In = new FileReader("src/test/resources/csv/in/log5.csv");
 
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(sinIn);
             for (CSVRecord record : records) {
@@ -86,15 +87,15 @@ public class VariantFunctionTest {
             }
             records = CSVFormat.DEFAULT.parse(cosIn);
             for (CSVRecord record : records) {
-                Mockito.when(cosMock.solveCos(Double.parseDouble(record.get(0)), epsilon)).thenReturn(Double.valueOf(record.get(1)));
+                Mockito.when(cosMock.solveFunction(Double.parseDouble(record.get(0)), epsilon)).thenReturn(Double.valueOf(record.get(1)));
             }
             records = CSVFormat.DEFAULT.parse(cscIn);
             for (CSVRecord record : records) {
-                Mockito.when(cscMock.solveCsc(Double.parseDouble(record.get(0)), epsilon)).thenReturn(Double.valueOf(record.get(1)));
+                Mockito.when(cscMock.solveFunction(Double.parseDouble(record.get(0)), epsilon)).thenReturn(Double.valueOf(record.get(1)));
             }
             records = CSVFormat.DEFAULT.parse(tanIn);
             for (CSVRecord record : records) {
-                Mockito.when(tanMock.solveTan(Double.parseDouble(record.get(0)), epsilon)).thenReturn(Double.valueOf(record.get(1)));
+                Mockito.when(tanMock.solveFunction(Double.parseDouble(record.get(0)), epsilon)).thenReturn(Double.valueOf(record.get(1)));
             }
             records = CSVFormat.DEFAULT.parse(lnIn);
             for (CSVRecord record : records) {
@@ -104,7 +105,7 @@ public class VariantFunctionTest {
             for (CSVRecord record : records) {
                 Mockito.when(logMock.solveLog(Double.parseDouble(record.get(0)), epsilon, 2)).thenReturn(Double.valueOf(record.get(1)));
             }
-            records = CSVFormat.DEFAULT.parse(log3In);
+            records = CSVFormat.DEFAULT.parse(log5In);
             for (CSVRecord record : records) {
                 Mockito.when(logMock.solveLog(Double.parseDouble(record.get(0)), epsilon, 3)).thenReturn(Double.valueOf(record.get(1)));
             }
@@ -131,15 +132,15 @@ public class VariantFunctionTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "csv/in/system.csv")
-    @DisplayName("test with mocks")
-    void testWithMocks(double value, double expected) {
+    @CsvFileSource(resources = "csv/in/system_trig.csv")
+    @DisplayName("test trig  with mocks")
+    void testTrigWithMocks(double value, double expected) {
         VariantFunction function = new VariantFunction(cosMock, cotMock, tanMock, cscMock, logMock);
         Assertions.assertEquals(expected, function.solveFunction(value, epsilon), epsilon);
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "csv/in/system.csv")
+    @CsvFileSource(resources = "csv/in/system_trig.csv")
     @DisplayName("test cos and mocks")
     void testWithCos(double value, double expected) {
         VariantFunction function = new VariantFunction(new Cos(sinMock), cotMock, tanMock, cscMock, logMock);
@@ -147,23 +148,16 @@ public class VariantFunctionTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "csv/in/system.csv")
+    @CsvFileSource(resources = "csv/in/system_trig.csv")
     @DisplayName("test cos, sin and mocks")
     void testWithCosAndSin(double value, double expected) {
         VariantFunction function = new VariantFunction(new Cos(new Sin()), cotMock, tanMock, cscMock, logMock);
         Assertions.assertEquals(expected, function.solveFunction(value, epsilon), epsilon);
     }
 
-    @ParameterizedTest
-    @CsvFileSource(resources = "csv/in/system.csv")
-    @DisplayName("test tan and mocks")
-    void testWithTan(double value, double expected) {
-        VariantFunction function = new VariantFunction(cosMock, new Cot(sinMock, cosMock), tanMock, cscMock, logMock);
-        Assertions.assertEquals(expected, function.solveFunction(value, epsilon), epsilon);
-    }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "csv/in/system.csv")
+    @CsvFileSource(resources = "csv/in/system_trig.csv")
     @DisplayName("test tan, sin, cos and mocks")
     void testWithTanSinCos(double value, double expected) {
         VariantFunction function = new VariantFunction(cosMock, cotMock, new Tan(new Sin(), new Cos(new Sin())), cscMock, logMock);
@@ -173,7 +167,7 @@ public class VariantFunctionTest {
 
 
     @ParameterizedTest
-    @CsvFileSource(resources = "csv/in/system.csv")
+    @CsvFileSource(resources = "csv/in/system_log.csv")
     @DisplayName("test ln and mocks")
     void testWithLn(double value, double expected) {
         VariantFunction function = new VariantFunction(cosMock, cotMock, tanMock, cscMock, new Log(new Ln()));

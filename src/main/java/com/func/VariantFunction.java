@@ -25,7 +25,7 @@ public class VariantFunction implements IFunction {
 
     public Double solveFunction(double value, double eps) {
         if (value <= 0) {
-            return ((cos.solveCos(value, eps) - cot.solveCot(value, eps)) / (tan.solveTan(value, eps)) * (csc.solveCsc(value, eps) + tan.solveTan(value, eps) * cos.solveCos(value, eps)));
+            return ((cos.solveFunction(value, eps) - cot.solveFunction(value, eps)) / (tan.solveFunction(value, eps)) * (csc.solveFunction(value, eps) + tan.solveFunction(value, eps) * cos.solveFunction(value, eps)));
         } else {
             return Math.pow((log.solveLog(5, value, eps) + log.solveLog(10, value, eps)) / (log.solveLog(5, value, eps)), 2) / Math.pow((log.solveLog(2, value, eps) / log.solveLog(10, value, eps)), 2) * log.solveLog(2, Math.pow(value, 3), eps);
         }
