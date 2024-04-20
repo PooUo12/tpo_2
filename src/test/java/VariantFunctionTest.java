@@ -157,7 +157,7 @@ public class VariantFunctionTest {
 
 
     @ParameterizedTest
-    @CsvFileSource(resources = "csv/in/system_trig.csv")
+    @CsvFileSource(resources = "csv/in/system_tan.csv")
     @DisplayName("test tan, sin, cos and mocks")
     void testWithTanSinCos(double value, double expected) {
         VariantFunction function = new VariantFunction(cosMock, cotMock, new Tan(new Sin(), new Cos(new Sin())), cscMock, logMock);
